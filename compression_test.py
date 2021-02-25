@@ -4,7 +4,6 @@ import zstd
 import lz4.frame
 import time
 
-#from memory_profiler import profile
 warnings.simplefilter('ignore')
 
 
@@ -25,7 +24,6 @@ def calc_comp_ration(compressed_data, byte_data):
     return len(byte_data) / len(compressed_data)
 
 
-# @profile
 def decompression(compressed_data, compression_type):
     start = time.time()
     if(compression_type == 'zstd'):
@@ -39,7 +37,6 @@ def decompression(compressed_data, compression_type):
     return decomp_time
 
 
-# @profile
 def compression(byte_data, data_type, data_length, compression_type):
     start = time.time()
     if (compression_type == 'zstd'):
